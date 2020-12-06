@@ -27,7 +27,8 @@ Vagrant.configure("2") do |config|
   config.vm.provider :libvirt do |libvirt|
     # Avoid "Call to virDomainCreateWithFlags failed: unsupported configuration: host doesn't support invariant TSC" error when using snapshots
     libvirt.cpu_mode = 'host-passthrough'
-
+    libvirt.cpus = 4
+    libvirt.memory = 4096
     ('b'..'e').map do |i|
       libvirt.storage :file, :device => "vd#{i}", :size => '20G', :type => 'qcow2', :cache => 'writeback'
     end
@@ -37,7 +38,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
     vb.cpus = 4
-    vb.memory = "4096"
+    vb.memory = 4096
   end
 
   if Vagrant.has_plugin?("vagrant-cachier")
