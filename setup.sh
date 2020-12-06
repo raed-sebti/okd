@@ -2,7 +2,7 @@
 
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo 
 sudo yum -y install libvirt-daemon-kvm libvirt-client vagrant gcc-c++ make libstdc++-devel libvirt-devel rsync
-sudo echo "user = \"root\"" >> /etc/libvirt/qemu.conf
+sudo bash -c 'echo "user = \"root\"" >> /etc/libvirt/qemu.conf'
 sudo systemctl enable --now libvirtd
 sudo usermod -a -G libvirt $( id -un )
 sudo vagrant plugin install vagrant-libvirt vagrant-sshfs vagrant-hostmanager
