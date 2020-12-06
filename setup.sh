@@ -5,7 +5,6 @@ sudo yum -y install libvirt-daemon-kvm libvirt-client vagrant gcc-c++ make libst
 sudo echo "user = \"root\"" >> /etc/libvirt/qemu.conf
 sudo systemctl enable --now libvirtd
 sudo usermod -a -G libvirt $( id -un )
-newgrp libvirt
 sudo vagrant plugin install vagrant-libvirt vagrant-sshfs vagrant-hostmanager
 mkdir ~/lab-env ; cd ~/lab-env
 
