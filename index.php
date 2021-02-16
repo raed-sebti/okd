@@ -1,4 +1,4 @@
 <?php
 echo $_SERVER['SERVER_ADDR'];
-echo "  Hello crc !";
+echo "Hello OKD !";
 ?>
