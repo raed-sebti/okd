@@ -1,4 +1,3 @@
 <?php
-echo $_SERVER['SERVER_ADDR'];
-echo "Hello Rym !";
+echo "Hello World! served by pod: " . $_SERVER['SERVER_ADDR'];
 ?>
